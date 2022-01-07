@@ -7,27 +7,26 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <stdbool.h>
-int main()
-{
-int count=0;
-char ch;
-printf("Please enter sth:\n");
-while((ch=getchar()!='#'))
-{
-if(ch=='.')
-{
-count++;
-ch='!';
-}
+    int main()
+    {
+    int count=0;
+    char ch;
+    printf("Please enter sth:\n");
+        while ((ch = getchar()) != '#')
+        {
+            if (ch == '.')
+                {printf("!");
+                count++;}
+            else if (ch == '!')
+                {printf("!!");
+                count++;}
+            else
+                printf("%c", ch);
+        }
+    printf("this program has made %d times substitutions", count);
+        return 0;
 
-else if(ch=='!')
-{
-count++;
-ch='!!';
-}
+    printf("subs %d times", count);
+    return 0;
+    }
 
-}
-
-printf("this program has made %d times substitutions", count);
-return 0;
-}
