@@ -1,0 +1,52 @@
+/*Write a program that requests the hours worked in a week and then prints the
+gross pay, the taxes, and the net pay. Assume the following:
+a. Basic pay rate = $10.00/hr
+b. Overtime (in excess of 40 hours) = time and a half
+c. Tax rate: 15% of the first $300
+20% of the next $150
+25% of the rest */
+
+
+#include <stdio.h>
+#include <ctype.h>
+#include <stdbool.h>
+#define rate 10
+#define taxrate1 0.15
+#define taxrate2 0.2
+#define taxrate3 0.25
+    int main()
+    {
+    int count=0;
+    float hour,netpay,tax,pay;
+    printf("Please enter the hours you worked:\n");
+    scanf("%.2f",&hour);
+if(hour<=30)
+{
+    pay=hour*rate;
+    tax=pay*taxrate1;
+    netpay=pay-tax;
+}
+else if(hour>30&&hour<=40)
+{
+    pay=hour*rate;
+    tax=300*taxrate1+(hour-30)*hour*taxrate2;
+    netpay=pay-tax;
+}
+else if(hour>40&&hour<=50/1.5+40)
+{
+    pay=(1.5*(hour-40)+40)*rate;
+    tax=300*taxrate1+(pay-300)*taxrate2;
+    netpay=pay-tax;
+}
+else if(hour>50/1.5+40)
+{
+    pay=(1.5*(hour-40)+40)*rate;
+     tax=300*taxrate1+150*taxrate2-(pay-450)*taxrate3;
+     netpay=pay-tax;
+}
+
+    printf("Your gross pay are %lf\n", pay);
+    printf("Your tax are %lf\n", tax);
+    printf("Your net pay are %lf\n", netpay);
+    return 0;
+    }
