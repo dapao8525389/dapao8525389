@@ -16,7 +16,6 @@ c. Tax rate: 15% of the first $300
 #define taxrate3 0.25
     int main()
     {
-    int count=0;
     float hour,netpay,tax,pay;
     printf("Please enter the hours you worked:\n");
     scanf("%.2f",&hour);
