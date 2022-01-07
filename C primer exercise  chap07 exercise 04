@@ -28,6 +28,6 @@ ch='!!';
 
 }
 
-printf("subs %d times", count);
+printf("this program has made %d times substitutions", count);
 return 0;
 }
